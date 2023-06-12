@@ -40,7 +40,10 @@ class AttentionBlock extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                StartButton(name: 'CONTACT US')
+                StartButton(
+                  name: 'CONTACT US',
+                  action: () {},
+                )
               ],
             ),
           ))

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StartButton extends StatelessWidget {
-  const StartButton({super.key, required this.name});
+  const StartButton({super.key, required this.name, required this.action});
   final String name;
+  final void action;
 
   @override
   Widget build(BuildContext context) {

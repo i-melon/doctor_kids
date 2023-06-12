@@ -34,6 +34,7 @@ class Header extends StatelessWidget {
           ),
           StartButton(
             name: 'START',
+            action: () {},
           )
         ],
       ),

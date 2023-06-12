@@ -51,6 +51,7 @@ class StartBlock extends StatelessWidget {
                 ),
                 StartButton(
                   name: 'START',
+                  action: () {},
                 )
               ],
             ),

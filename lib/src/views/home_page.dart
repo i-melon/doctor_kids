@@ -1,4 +1,3 @@
-import 'package:doctor_kids/core/stert_button.dart';
 import 'package:doctor_kids/src/details/advantages.dart';
 import 'package:doctor_kids/src/details/attention.dart';
 import 'package:doctor_kids/src/details/header.dart';
