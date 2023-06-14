@@ -42,7 +42,40 @@ class AttentionBlock extends StatelessWidget {
                 ),
                 StartButton(
                   name: 'CONTACT US',
-                  action: () {},
+                  action: () {
+                    return showDialog<void>(
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          padding: EdgeInsets.all(50),
+                          child: Center(
+                            child: AlertDialog(
+                              title: Text('CONTACT US'),
+                              content: Container(
+                                height: 100,
+                                child: Center(
+                                    child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('email: dimash21dautov@gmail.com'),
+                                    Text('phone: 8-771-222-16-11')
+                                  ],
+                                )),
+                              ),
+                              actions: [
+                                StartButton(
+                                    name: 'OK',
+                                    action: () {
+                                      Navigator.of(context).pop();
+                                    })
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
                 )
               ],
             ),

@@ -2,6 +2,7 @@ import 'package:doctor_kids/core/stert_button.dart';
 import 'package:doctor_kids/core/symptoms.dart';
 import 'package:doctor_kids/src/details/chose_symptom.dart';
 import 'package:doctor_kids/src/details/header.dart';
+import 'package:doctor_kids/src/views/quiz.dart';
 import 'package:flutter/material.dart';
 
 class FormPage extends StatefulWidget {
@@ -73,7 +74,38 @@ class _FormPageState extends State<FormPage> {
                             }),
                       ),
                     ),
-                    StartButton(name: 'NEXT', action: () {})
+                    StartButton(
+                        name: 'NEXT',
+                        action: () {
+                          if (choosedSymptoms.isEmpty) {
+                            return showDialog<void>(
+                              context: context,
+                              builder: (context) {
+                                return Container(
+                                  padding: EdgeInsets.all(50),
+                                  child: Center(
+                                    child: AlertDialog(
+                                      title: Text(
+                                          'You must chose at least one symptom'),
+                                      actions: [
+                                        StartButton(
+                                            name: 'OK',
+                                            action: () {
+                                              Navigator.of(context).pop();
+                                            })
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Quiz()));
+                          }
+                        })
                   ],
                 ),
               )
