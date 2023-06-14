@@ -53,11 +53,12 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC3jYv3HC-g6uXmneVem6ZoO5-704fwHgM',
-    appId: '1:1049272263731:web:40157748aa5e2aaa986f46',
-    messagingSenderId: '1049272263731',
-    projectId: 'doctor-kids-12c5b',
-    authDomain: 'doctor-kids-12c5b.firebaseapp.com',
-    storageBucket: 'doctor-kids-12c5b.appspot.com',
-  );
+      apiKey: 'AIzaSyC3jYv3HC-g6uXmneVem6ZoO5-704fwHgM',
+      appId: '1:1049272263731:web:40157748aa5e2aaa986f46',
+      messagingSenderId: '1049272263731',
+      projectId: 'doctor-kids-12c5b',
+      authDomain: 'doctor-kids-12c5b.firebaseapp.com',
+      storageBucket: 'doctor-kids-12c5b.appspot.com',
+      databaseURL:
+          'https://doctor-kids-12c5b-default-rtdb.asia-southeast1.firebasedatabase.app/');
 }

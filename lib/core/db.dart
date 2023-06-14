@@ -1,0 +1,870 @@
+import 'dart:convert';
+
+String jsonStr = '''
+ [
+          {
+            "name": "Бронхит",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Менее недели",
+                    "score": 1
+                  },
+                  {
+                    "answer": "Несколько недель",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более месяца",
+                    "score": 5
+                  }
+                ],
+                "question": "Как долго длится ваш кашель?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас повышается температура?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Слизистая",
+                    "score": 1
+                  },
+                  {
+                    "answer": "Гнойная",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Кровянистая",
+                    "score": 5
+                  }
+                ],
+                "question": "Какой характер у вашей мокроты?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Кашель"
+              },
+              {
+                "isActive": false,
+                "name": "Температура"
+              },
+              {
+                "isActive": false,
+                "name": "Мокрота"
+              }
+            ]
+          },
+          {
+            "name": "Грипп",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Менее недели",
+                    "score": 1
+                  },
+                  {
+                    "answer": "Несколько недель",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более месяца",
+                    "score": 5
+                  }
+                ],
+                "question": "Как долго длится ваш кашель?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "37-38°C",
+                    "score": 1
+                  },
+                  {
+                    "answer": "38-39°C",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более 39°C",
+                    "score": 5
+                  }
+                ],
+                "question": "Какая у вас температура?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас есть затруднение глотания?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Кашель"
+              },
+              {
+                "isActive": false,
+                "name": "Высокая температура"
+              },
+              {
+                "isActive": false,
+                "name": "Боль в горле"
+              }
+            ]
+          },
+          {
+            "name": "Ангина",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Менее недели",
+                    "score": 1
+                  },
+                  {
+                    "answer": "Несколько недель",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более месяца",
+                    "score": 5
+                  }
+                ],
+                "question": "Как долго вас беспокоит боль в горле?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Есть ли у вас налет на гландах?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "37-38°C",
+                    "score": 1
+                  },
+                  {
+                    "answer": "38-39°C",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более 39°C",
+                    "score": 5
+                  }
+                ],
+                "question": "Какая у вас температура?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Боль в горле"
+              },
+              {
+                "isActive": false,
+                "name": "Покраснение гланд"
+              },
+              {
+                "isActive": false,
+                "name": "Высокая температура"
+              }
+            ]
+          },
+          {
+            "name": "Диабет",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Чаще 5 раз в день",
+                    "score": 4
+                  },
+                  {
+                    "answer": "3-5 раз в день",
+                    "score": 2
+                  },
+                  {
+                    "answer": "Реже 3 раз в день",
+                    "score": 1
+                  }
+                ],
+                "question": "Как часто вы ходите мочиться?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас часто возникает жажда?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы быстро утомляетесь?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Частое мочеиспускание"
+              },
+              {
+                "isActive": false,
+                "name": "Сильная жажда"
+              },
+              {
+                "isActive": false,
+                "name": "Усталость"
+              }
+            ]
+          },
+          {
+            "name": "Астма",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Почти каждый день",
+                    "score": 5
+                  },
+                  {
+                    "answer": "Несколько раз в неделю",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Реже одного раза в неделю",
+                    "score": 1
+                  }
+                ],
+                "question": "Как часто у вас возникает одышка?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы слышите свистящее дыхание при дыхании?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Чувствуете ли вы затруднение при вдохе и выдохе?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Одышка"
+              },
+              {
+                "isActive": false,
+                "name": "Свистящее дыхание"
+              },
+              {
+                "isActive": false,
+                "name": "Затруднение вдоха и выдоха"
+              }
+            ]
+          },
+          {
+            "name": "Острый гастрит",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Менее недели",
+                    "score": 2
+                  },
+                  {
+                    "answer": "Несколько недель",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более месяца",
+                    "score": 4
+                  }
+                ],
+                "question": "Как давно у вас возникла боль в желудке?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Часто ли у вас возникает тошнота?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Бывает ли у вас рвота?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Боль в желудке"
+              },
+              {
+                "isActive": false,
+                "name": "Тошнота"
+              },
+              {
+                "isActive": false,
+                "name": "Рвота"
+              }
+            ]
+          },
+          {
+            "name": "Мигрень",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас бывает односторонняя головная боль?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас пульсирующая боль в голове?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы испытываете чувство дискомфорта от яркого света?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Односторонняя головная боль"
+              },
+              {
+                "isActive": false,
+                "name": "Пульсирующая боль"
+              },
+              {
+                "isActive": false,
+                "name": "Светобоязнь"
+              }
+            ]
+          },
+          {
+            "name": "Артрит",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Менее недели",
+                    "score": 2
+                  },
+                  {
+                    "answer": "Несколько недель",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более месяца",
+                    "score": 4
+                  }
+                ],
+                "question": "Как давно у вас появилась боль в суставах?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас есть отек суставов?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы испытываете ограничение подвижности в суставах?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Боль в суставах"
+              },
+              {
+                "isActive": false,
+                "name": "Отек суставов"
+              },
+              {
+                "isActive": false,
+                "name": "Ограничение подвижности"
+              }
+            ]
+          },
+          {
+            "name": "Депрессия",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы испытываете пониженное настроение?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы чувствуете утреннюю тревогу?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы потеряли интерес к прежним увлечениям?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Пониженное настроение"
+              },
+              {
+                "isActive": false,
+                "name": "Утренняя тревога"
+              },
+              {
+                "isActive": false,
+                "name": "Потеря интереса к увлечениям"
+              }
+            ]
+          },
+          {
+            "name": "Пневмония",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Менее недели",
+                    "score": 1
+                  },
+                  {
+                    "answer": "Несколько недель",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Более месяца",
+                    "score": 5
+                  }
+                ],
+                "question": "Как долго длится ваш кашель?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас повышается температура?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас возникла одышка?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Кашель"
+              },
+              {
+                "isActive": false,
+                "name": "Температура"
+              },
+              {
+                "isActive": false,
+                "name": "Одышка"
+              }
+            ]
+          },
+          {
+            "name": "Анемия",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы чувствуете слабость и усталость?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Ваша кожа имеет бледный оттенок?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы быстро утомляетесь?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Слабость"
+              },
+              {
+                "isActive": false,
+                "name": "Бледность кожи"
+              },
+              {
+                "isActive": false,
+                "name": "Утомляемость"
+              }
+            ]
+          },
+          {
+            "name": "Гастроэзофагеальная рефлюксная болезнь",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы испытываете ожог в груди после еды?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас бывает регургитация (выбрасывание пищи из желудка в пищевод)?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы испытываете затруднение при глотании пищи?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Ожог в груди"
+              },
+              {
+                "isActive": false,
+                "name": "Регургитация"
+              },
+              {
+                "isActive": false,
+                "name": "Затруднение глотания"
+              }
+            ]
+          },
+          {
+            "name": "Остеохондроз",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас бывает боль в спине?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 4
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы ощущаете ограничение движения в спине?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас возникает головная боль в шейной области?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Боль в спине"
+              },
+              {
+                "isActive": false,
+                "name": "Ограничение движения"
+              },
+              {
+                "isActive": false,
+                "name": "Шейная головная боль"
+              }
+            ]
+          },
+          {
+            "name": "Гастродуоденит",
+            "questions": [
+              {
+                "answers": [
+                  {
+                    "answer": "Постоянно",
+                    "score": 5
+                  },
+                  {
+                    "answer": "Периодически",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Редко",
+                    "score": 1
+                  }
+                ],
+                "question": "Как часто у вас возникает боль в верхней части живота?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "Вы испытываете изжогу после еды?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Да",
+                    "score": 3
+                  },
+                  {
+                    "answer": "Нет",
+                    "score": 0
+                  }
+                ],
+                "question": "У вас снижен аппетит?"
+              }
+            ],
+            "symptomps": [
+              {
+                "isActive": false,
+                "name": "Боль в верхней части живота"
+              },
+              {
+                "isActive": false,
+                "name": "Изжога"
+              },
+              {
+                "isActive": false,
+                "name": "Плохой аппетит"
+              }
+            ]
+          }
+        ]
+''';
+
+// Преобразование JSON в список
+List<Map<String, dynamic>> listOfDiagnoz =
+    json.decode(jsonStr).cast<Map<String, dynamic>>();

@@ -5,7 +5,8 @@ import 'package:doctor_kids/src/details/start.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.newSm});
+  final List<String> newSm;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,9 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Header(),
-              StartBlock(),
+              StartBlock(
+                newSm: newSm,
+              ),
               Advantages(),
               AttentionBlock(),
             ],

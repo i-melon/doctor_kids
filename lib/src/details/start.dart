@@ -3,7 +3,8 @@ import 'package:doctor_kids/src/views/form_page.dart';
 import 'package:flutter/material.dart';
 
 class StartBlock extends StatelessWidget {
-  const StartBlock({super.key});
+  const StartBlock({super.key, required this.newSm});
+  final List<String> newSm;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +55,7 @@ class StartBlock extends StatelessWidget {
                   name: 'START',
                   action: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => FormPage()));
+                        MaterialPageRoute(builder: (context) => FormPage(newSm: newSm,)));
                   },
                 )
               ],

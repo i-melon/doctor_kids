@@ -1,20 +1,22 @@
 import 'package:doctor_kids/core/stert_button.dart';
-import 'package:doctor_kids/core/symptoms.dart';
 import 'package:doctor_kids/src/details/chose_symptom.dart';
 import 'package:doctor_kids/src/details/header.dart';
 import 'package:doctor_kids/src/views/quiz.dart';
 import 'package:flutter/material.dart';
 
 class FormPage extends StatefulWidget {
-  FormPage({super.key});
+  FormPage({super.key, required this.newSm});
+  final List<String> newSm;
 
   @override
-  State<FormPage> createState() => _FormPageState();
+  State<FormPage> createState() => _FormPageState(symptoms: newSm);
 }
 
 class _FormPageState extends State<FormPage> {
-  List<String> symptoms = listOfSymptoms;
+  final List<String> symptoms;
   List<String> choosedSymptoms = [];
+
+  _FormPageState({required this.symptoms});
   void makeChoose(String newSm) {
     setState(() {
       choosedSymptoms.add(newSm);
