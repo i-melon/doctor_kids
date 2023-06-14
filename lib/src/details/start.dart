@@ -1,4 +1,5 @@
 import 'package:doctor_kids/core/stert_button.dart';
+import 'package:doctor_kids/src/views/form_page.dart';
 import 'package:flutter/material.dart';
 
 class StartBlock extends StatelessWidget {
@@ -51,7 +52,10 @@ class StartBlock extends StatelessWidget {
                 ),
                 StartButton(
                   name: 'START',
-                  action: () {},
+                  action: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => FormPage()));
+                  },
                 )
               ],
             ),

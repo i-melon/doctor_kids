@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class StartButton extends StatelessWidget {
   const StartButton({super.key, required this.name, required this.action});
   final String name;
-  final void action;
+  final Function action;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class StartButton extends StatelessWidget {
               //make color or elevated button transparent
             ),
             onPressed: () {
-              print("START");
+              action();
             },
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30, vertical: 13),

@@ -1,4 +1,5 @@
 import 'package:doctor_kids/core/stert_button.dart';
+import 'package:doctor_kids/src/views/home_page.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -14,26 +15,32 @@ class Header extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            child: Row(
-              children: [
-                Text(
-                  'DOCTOR',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w900),
-                ),
-                Text('KIDS',
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+            child: Container(
+              child: Row(
+                children: [
+                  Text(
+                    'DOCTOR',
                     style: TextStyle(
-                        color: Color.fromARGB(255, 169, 235, 188),
+                        color: Colors.white,
                         fontSize: 30,
-                        fontWeight: FontWeight.w100))
-              ],
+                        fontWeight: FontWeight.w900),
+                  ),
+                  Text('KIDS',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 169, 235, 188),
+                          fontSize: 30,
+                          fontWeight: FontWeight.w100))
+                ],
+              ),
             ),
           ),
           StartButton(
-            name: 'START',
+            name: 'MENU',
             action: () {},
           )
         ],
