@@ -3,6 +3,7 @@ import 'package:doctor_kids/src/details/chose_symptom.dart';
 import 'package:doctor_kids/src/details/header.dart';
 import 'package:doctor_kids/src/views/quiz.dart';
 import 'package:flutter/material.dart';
+import 'package:doctor_kids/core/db.dart';
 
 class FormPage extends StatefulWidget {
   FormPage({super.key, required this.newSm});
@@ -15,12 +16,17 @@ class FormPage extends StatefulWidget {
 class _FormPageState extends State<FormPage> {
   final List<String> symptoms;
   List<String> choosedSymptoms = [];
+  List actDiagnz = [];
 
   _FormPageState({required this.symptoms});
   void makeChoose(String newSm) {
     setState(() {
       choosedSymptoms.add(newSm);
     });
+  }
+
+  void makeDgnz(List a) {
+    actDiagnz = a;
   }
 
   @override
@@ -32,9 +38,33 @@ class _FormPageState extends State<FormPage> {
           child: Column(
             children: [
               Header(),
+              Stack(
+                children: <Widget>[
+                  // Stroked text as border.
+                  Text(
+                    'Chose symptoms',
+                    style: TextStyle(
+                      fontSize: 40,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 3
+                        ..color = Colors.white,
+                    ),
+                  ),
+                  // Solid text as fill.
+                  Text(
+                    'Chose symptoms',
+                    style: TextStyle(
+                        fontSize: 40,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.w900),
+                  ),
+                ],
+              ),
               ChooseSymptop(
                 symptoms: symptoms,
                 addSm: makeChoose,
+                actDgnz: makeDgnz,
               ),
               Container(
                 width: double.infinity,
@@ -55,14 +85,9 @@ class _FormPageState extends State<FormPage> {
                                 height: 100,
                                 child: Center(
                                     child: TextButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      symptoms.add(choosedSymptoms[index]);
-                                      choosedSymptoms
-                                          .remove(choosedSymptoms[index]);
-                                    });
-                                  },
-                                  child: Text('${choosedSymptoms[index]}',
+                                  onPressed: () {},
+                                  child: Text(
+                                      '${choosedSymptoms[choosedSymptoms.length - 1 - index]}',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 25,
@@ -102,10 +127,13 @@ class _FormPageState extends State<FormPage> {
                               },
                             );
                           } else {
+                            print(actDiagnz[0]['name']);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Quiz()));
+                                    builder: (context) => Quiz(
+                                          superQz: actDiagnz,
+                                        )));
                           }
                         })
                   ],

@@ -1,0 +1,262 @@
+{
+    "list":[
+        {
+          "name": "Sayandinova Nazgul Abilievna",
+          "Experience": "18 years",
+          "price": "3000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/21513f54206a7153f5f9fc6d10d07fc0.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia"
+          ]
+        },
+        {
+          "name": "Ibragimova Dilorom Kamilzhanovna",
+          "Experience": "16 years",
+          "price": "12000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/2224e943ae4e2ebf6f826a0b30ceaaef.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia"
+          ]
+        },
+        {
+          "name": "Nurtaeva Aliya Alievna",
+          "Experience": "29 years",
+          "price": "5000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/cfef51cc6f22469cc906b590c0c7294a.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Eleugozhina Elmira Bekmukanovna",
+          "Experience": " 23 years",
+          "price": "7000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/bfdf2125f61c323eaafb15bd700d1658.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Robbek Ivan Gavrilyevich",
+          "Experience": " 7 years",
+          "price": "8000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/8006aeb8965a067fafc71086f0ccb016.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Kurakbayeva Aziza Sultanovna",
+          "Experience": "10 years",
+          "price": "5000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/8006aeb8965a067fafc71086f0ccb016.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Gurevich Dmitry Vladimirovich",
+          "Experience": "28 years",
+          "price": "20000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/c6a62cfc34139ae7531ba99936131a23.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma",
+            "Diabetes",
+            "Acute gastritis",
+            "Migraine",
+            "Depression",
+            "Anemia",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Asylbekova Zhannat Zeinollaevna",
+          "Experience": "41 years",
+          "price": "10000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/ccccf4a51ecaeb11d3ca291a7eb71d57.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma",
+            "Diabetes",
+            "Acute gastritis",
+            "Migraine",
+            "Depression",
+            "Anemia",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Grigorieva Anastasia Nikolaevna",
+          "Experience": "14 years",
+          "price": "12000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/f4628ade00ee741272355c0a02942566.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma",
+            "Diabetes",
+            "Acute gastritis",
+            "Migraine",
+            "Depression",
+            "Anemia",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Khan Natalya Viktorovna",
+          "Experience": "8 years",
+          "price": "8000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/0235a3d664c16b25d7518344b43442d2.jpg",
+          "Diagnozes":[
+            "Diabetes",
+            "Acute gastritis",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Suleimenova Dinara Sagandykovna",
+          "Experience": "28 years",
+          "price": "18000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/f063f98991e24748d54b1e23e87bfc22.jpg",
+          "Diagnozes":[
+            "Diabetes",
+            "Acute gastritis",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Eslamgalieva Sholpan Nurlanovna",
+          "Experience": "18 years",
+          "price": "8000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/6cab7e0fa9654fad0f9cd63c7683fe30.jpg",
+          "Diagnozes":[
+            "Diabetes",
+            "Acute gastritis",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Stroikov Petr Ivanovich",
+          "Experience": "39 years",
+          "price": "3500",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/a03548cf20b92910ca668fa99b9715ff.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Terenova Akzada Yesenamanovna",
+          "Experience": "29 years",
+          "price": "5000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/86ada3aa634bf7dd2eba9c8a1358bfd3.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Maltseva Inna Vladimirovna",
+          "Experience": "29 years",
+          "price": "10000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/8405f889f87fa0b5826b6bfb5ddb97e6.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Shcherbinina Olga Mikhailovna",
+          "Experience": "21 years",
+          "price": "7000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/4df678d1789201374f4aa87066e9d92a.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Dolzhenko Galina Petrovna",
+          "Experience": "32 years",
+          "price": "12000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/c1d2b72ebc81145bd8afaddb83dbea1b.jpg",
+          "Diagnozes":[
+            "Depression"
+          ]
+        },
+        {
+          "name": "Zeynetullaeva-Verbovaya Elmira Hamidullaevna",
+          "Experience": "14 years",
+          "price": "23000",
+          "rating": "3",
+          "imgURL": "https://docok.kz/files/doctor/big/ec85ad641dc6c38589151f9066eabc08.jpg",
+          "Diagnozes":[
+            "Depression"
+          ]
+        },
+      {
+          "name": "Petrova Zhanna Maratovna",
+          "Experience": "7 years",
+          "price": "30000",
+          "rating": "3",
+          "imgURL": "https://docok.kz/files/doctor/big/c5132faf6c164dd7b38baa1317e4efb1.jpg",
+          "Diagnozes":[
+            "Depression"
+          ]
+        }
+      ]
+}

@@ -1,17 +1,26 @@
+import 'package:doctor_kids/core/db.dart';
 import 'package:flutter/material.dart';
 
 class ChooseSymptop extends StatefulWidget {
-  ChooseSymptop({super.key, required this.symptoms, required this.addSm});
+  ChooseSymptop(
+      {super.key,
+      required this.symptoms,
+      required this.addSm,
+      required this.actDgnz});
   final List<String> symptoms;
   final Function addSm;
+  final Function actDgnz;
 
   @override
-  State<ChooseSymptop> createState() => _ChooseSymptopState(addSm: addSm);
+  State<ChooseSymptop> createState() =>
+      _ChooseSymptopState(addSm: addSm, actDgnz: actDgnz);
 }
 
 class _ChooseSymptopState extends State<ChooseSymptop> {
-  _ChooseSymptopState({required this.addSm});
+  _ChooseSymptopState({required this.addSm, required this.actDgnz});
   final Function addSm;
+  final Function actDgnz;
+  Set activeSm = {};
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,6 +58,15 @@ class _ChooseSymptopState extends State<ChooseSymptop> {
                         setState(() {
                           widget.symptoms.remove(widget.symptoms[index]);
                         });
+                        for (int i = 0; i < listOfDiagnoz.length; i++) {
+                          for (int y = 0; y < 3; y++) {
+                            if (listOfDiagnoz[i]['symptomps'][y]['name'] ==
+                                widget.symptoms[index]) {
+                              activeSm.add(listOfDiagnoz[i]);
+                            }
+                          }
+                        }
+                        actDgnz(activeSm.toList());
                       },
                     ),
                   );

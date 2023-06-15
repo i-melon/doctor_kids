@@ -4,18 +4,21 @@ import 'package:doctor_kids/src/views/finish_page.dart';
 import 'package:flutter/material.dart';
 
 class Quiz extends StatefulWidget {
-  Quiz({super.key});
-
+  Quiz({super.key, required this.superQz});
+  final List superQz;
   @override
-  State<Quiz> createState() => _QuizState();
+  State<Quiz> createState() => _QuizState(superQZ: superQz);
 }
 
 class _QuizState extends State<Quiz> {
-  List<String> answers = ['1', '2', '3'];
-
-  List<String> questions = ['question 1', 'question 2'];
+  final List superQZ;
+  Set questionsSet = {};
+  List questions = [];
   bool isFinish = false;
   int questionIndex = 0;
+  List<int> csoreList = [];
+
+  _QuizState({required this.superQZ});
 
   void doAnswer() {
     if (questionIndex == questions.length - 1) {
@@ -32,6 +35,13 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
+    for (int i = 0; i < superQZ.length; i++) {
+      for (int y = 0; y < 3; y++) {
+        questionsSet.add(superQZ[i]['questions'][y]);
+      }
+    }
+    questions = questionsSet.toList();
+
     return Scaffold(
       backgroundColor: Colors.black87,
       body: SingleChildScrollView(
@@ -52,7 +62,7 @@ class _QuizState extends State<Quiz> {
                             children: <Widget>[
                               // Stroked text as border.
                               Text(
-                                '${questions[questionIndex]}',
+                                '${questions[questionIndex]['question']}',
                                 style: TextStyle(
                                   fontSize: 40,
                                   foreground: Paint()
@@ -63,7 +73,7 @@ class _QuizState extends State<Quiz> {
                               ),
                               // Solid text as fill.
                               Text(
-                                '${questions[questionIndex]}',
+                                '${questions[questionIndex]['question']}',
                                 style: TextStyle(
                                     fontSize: 40,
                                     color: Colors.black87,
@@ -77,10 +87,22 @@ class _QuizState extends State<Quiz> {
                               child: StartButton(
                                 name: 'FINISH',
                                 action: () {
+                                  List<int> useThis = [];
+                                  for (int i = 0;
+                                      i < csoreList.length;
+                                      i = i + 3) {
+                                    useThis.add(csoreList[i] +
+                                        csoreList[i + 1] +
+                                        csoreList[i + 2]);
+                                  }
+                                  print(useThis);
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => FinishPage()));
+                                          builder: (context) => FinishPage(
+                                                score: useThis,
+                                                listOfDgnz: superQZ,
+                                              )));
                                 },
                               ),
                             ),
@@ -94,7 +116,8 @@ class _QuizState extends State<Quiz> {
                             width: double.infinity,
                             height: 216,
                             child: ListView.builder(
-                                itemCount: answers.length,
+                                itemCount:
+                                    questions[questionIndex]['answers'].length,
                                 itemBuilder: (context, index) {
                                   return Container(
                                     margin: EdgeInsets.symmetric(
@@ -108,7 +131,7 @@ class _QuizState extends State<Quiz> {
                                     height: 60,
                                     child: TextButton(
                                       child: Text(
-                                        '${answers[index]}',
+                                        '${questions[questionIndex]['answers'][index]['answer']}',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 20,
@@ -116,6 +139,8 @@ class _QuizState extends State<Quiz> {
                                       ),
                                       onPressed: () {
                                         doAnswer();
+                                        csoreList.add(questions[questionIndex]
+                                            ['answers'][index]['score']);
                                       },
                                     ),
                                   );

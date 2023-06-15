@@ -3,90 +3,90 @@ import 'dart:convert';
 String jsonStr = '''
  [
           {
-            "name": "Бронхит",
+            "name": "Bronchitis",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Менее недели",
+                    "answer": "Less than a week",
                     "score": 1
                   },
                   {
-                    "answer": "Несколько недель",
+                    "answer": "Few weeks",
                     "score": 3
                   },
                   {
-                    "answer": "Более месяца",
+                    "answer": "More than a month",
                     "score": 5
                   }
                 ],
-                "question": "Как долго длится ваш кашель?"
+                "question": "How long does child\'s cough last?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас повышается температура?"
+                "question": "Is temperature rising?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Слизистая",
+                    "answer": "Mucous",
                     "score": 1
                   },
                   {
-                    "answer": "Гнойная",
+                    "answer": "Purulent",
                     "score": 4
                   },
                   {
-                    "answer": "Кровянистая",
+                    "answer": "Bloody",
                     "score": 5
                   }
                 ],
-                "question": "Какой характер у вашей мокроты?"
+                "question": "What is the nature of child\'s sputum?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Кашель"
+                "name": "Cough"
               },
               {
                 "isActive": false,
-                "name": "Температура"
+                "name": "Temperature"
               },
               {
                 "isActive": false,
-                "name": "Мокрота"
+                "name": "Sputum"
               }
             ]
           },
           {
-            "name": "Грипп",
+            "name": "Flu",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Менее недели",
+                    "answer": "several times a day",
                     "score": 1
                   },
                   {
-                    "answer": "Несколько недель",
-                    "score": 3
+                    "answer": "Оften",
+                    "score": 5
                   },
                   {
-                    "answer": "Более месяца",
-                    "score": 5
+                    "answer": "Seizures",
+                    "score": 3
                   }
                 ],
-                "question": "Как долго длится ваш кашель?"
+                "question": "How coughing common?"
               },
               {
                 "answers": [
@@ -99,766 +99,646 @@ String jsonStr = '''
                     "score": 3
                   },
                   {
-                    "answer": "Более 39°C",
+                    "answer": "39°C+",
                     "score": 5
                   }
                 ],
-                "question": "Какая у вас температура?"
+                "question": "What is temperature?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас есть затруднение глотания?"
+                "question": "Does child difficulty swallowing?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Кашель"
+                "name": "Cough"
               },
               {
                 "isActive": false,
-                "name": "Высокая температура"
+                "name": "Heat"
               },
               {
                 "isActive": false,
-                "name": "Боль в горле"
+                "name": "A sore throat"
               }
             ]
           },
           {
-            "name": "Ангина",
+            "name": "Angina",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Менее недели",
+                    "answer": "Less than a week",
                     "score": 1
                   },
                   {
-                    "answer": "Несколько недель",
+                    "answer": "Few weeks",
                     "score": 3
                   },
                   {
-                    "answer": "Более месяца",
+                    "answer": "More than a month",
                     "score": 5
                   }
                 ],
-                "question": "Как долго вас беспокоит боль в горле?"
+                "question": "How long have he had a sore throat?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Есть ли у вас налет на гландах?"
+                "question": "Does child have plaque on the tonsils?"
               },
               {
                 "answers": [
                   {
-                    "answer": "37-38°C",
+                    "answer": "Noon",
                     "score": 1
                   },
                   {
-                    "answer": "38-39°C",
+                    "answer": "At night",
                     "score": 3
                   },
                   {
-                    "answer": "Более 39°C",
+                    "answer": "Temperature stable",
                     "score": 5
                   }
                 ],
-                "question": "Какая у вас температура?"
+                "question": "What time of the day is the temperature the highest?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Боль в горле"
+                "name": "A sore throat"
               },
               {
                 "isActive": false,
-                "name": "Покраснение гланд"
+                "name": "Reddening of the tonsils"
               },
               {
                 "isActive": false,
-                "name": "Высокая температура"
+                "name": "Heat"
               }
             ]
           },
           {
-            "name": "Диабет",
+            "name": "Diabetes",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Чаще 5 раз в день",
+                    "answer": "More than 5 times a day",
                     "score": 4
                   },
                   {
-                    "answer": "3-5 раз в день",
+                    "answer": "3-5 times a day",
                     "score": 2
                   },
                   {
-                    "answer": "Реже 3 раз в день",
+                    "answer": "Less than 3 times a day",
                     "score": 1
                   }
                 ],
-                "question": "Как часто вы ходите мочиться?"
+                "question": "How often does the child go to urinate?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас часто возникает жажда?"
+                "question": "Is your child often thirsty?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы быстро утомляетесь?"
+                "question": "Does your child get tired quickly?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Частое мочеиспускание"
+                "name": "Frequent urination"
               },
               {
                 "isActive": false,
-                "name": "Сильная жажда"
+                "name": "intense thirst"
               },
               {
                 "isActive": false,
-                "name": "Усталость"
+                "name": "Fatigue"
               }
             ]
           },
           {
-            "name": "Астма",
+            "name": "Asthma",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Почти каждый день",
+                    "answer": "Almost every day",
                     "score": 5
                   },
                   {
-                    "answer": "Несколько раз в неделю",
+                    "answer": "Few times a week",
                     "score": 3
                   },
                   {
-                    "answer": "Реже одного раза в неделю",
+                    "answer": "Less than once a week",
                     "score": 1
                   }
                 ],
-                "question": "Как часто у вас возникает одышка?"
+                "question": "How often does child have shortness of breath?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы слышите свистящее дыхание при дыхании?"
+                "question": "Do you hear wheezing when child breathe?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Чувствуете ли вы затруднение при вдохе и выдохе?"
+                "question": "Does the child feel difficulty in inhaling and exhaling?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Одышка"
+                "name": "Dyspnea"
               },
               {
                 "isActive": false,
-                "name": "Свистящее дыхание"
+                "name": "wheezing"
               },
               {
                 "isActive": false,
-                "name": "Затруднение вдоха и выдоха"
+                "name": "Difficulty inhaling and exhaling"
               }
             ]
           },
           {
-            "name": "Острый гастрит",
+            "name": "Acute gastritis",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Менее недели",
+                    "answer": "Less than a week",
                     "score": 2
                   },
                   {
-                    "answer": "Несколько недель",
+                    "answer": "Few weeks",
                     "score": 3
                   },
                   {
-                    "answer": "Более месяца",
+                    "answer": "More than a month",
                     "score": 4
                   }
                 ],
-                "question": "Как давно у вас возникла боль в желудке?"
+                "question": "How long have the child had stomach pain?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Часто ли у вас возникает тошнота?"
+                "question": "Does the child often experience nausea?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Бывает ли у вас рвота?"
+                "question": "Do you vomit?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Боль в желудке"
+                "name": "Stomach ache"
               },
               {
                 "isActive": false,
-                "name": "Тошнота"
+                "name": "Nausea"
               },
               {
                 "isActive": false,
-                "name": "Рвота"
+                "name": "Vomit"
               }
             ]
           },
           {
-            "name": "Мигрень",
+            "name": "Migraine",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас бывает односторонняя головная боль?"
+                "question": "Do you have unilateral headache?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас пульсирующая боль в голове?"
+                "question": "Do you have a throbbing pain in your head?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы испытываете чувство дискомфорта от яркого света?"
+                "question": "Do you experience discomfort from bright light?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Односторонняя головная боль"
+                "name": "Unilateral headache"
               },
               {
                 "isActive": false,
-                "name": "Пульсирующая боль"
+                "name": "Throbbing pain"
               },
               {
                 "isActive": false,
-                "name": "Светобоязнь"
+                "name": "Photophobia"
               }
             ]
           },
           {
-            "name": "Артрит",
+            "name": "Depression",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Менее недели",
-                    "score": 2
+                    "answer": "Yes",
+                    "score": 4
                   },
                   {
-                    "answer": "Несколько недель",
+                    "answer": "No",
+                    "score": 0
+                  }
+                ],
+                "question": "Is your child experiencing low mood?"
+              },
+              {
+                "answers": [
+                  {
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Более месяца",
-                    "score": 4
+                    "answer": "No",
+                    "score": 0
                   }
                 ],
-                "question": "Как давно у вас появилась боль в суставах?"
+                "question": "Does child feel morning anxiety?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас есть отек суставов?"
-              },
-              {
-                "answers": [
-                  {
-                    "answer": "Да",
-                    "score": 4
-                  },
-                  {
-                    "answer": "Нет",
-                    "score": 0
-                  }
-                ],
-                "question": "Вы испытываете ограничение подвижности в суставах?"
+                "question": "Has child lost interest in your old hobbies?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Боль в суставах"
+                "name": "low mood"
               },
               {
                 "isActive": false,
-                "name": "Отек суставов"
+                "name": "morning alert"
               },
               {
                 "isActive": false,
-                "name": "Ограничение подвижности"
+                "name": "Loss of interest in hobbies"
               }
             ]
           },
           {
-            "name": "Депрессия",
+            "name": "Pneumonia",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Да",
-                    "score": 4
-                  },
-                  {
-                    "answer": "Нет",
-                    "score": 0
-                  }
-                ],
-                "question": "Вы испытываете пониженное настроение?"
-              },
-              {
-                "answers": [
-                  {
-                    "answer": "Да",
-                    "score": 3
-                  },
-                  {
-                    "answer": "Нет",
-                    "score": 0
-                  }
-                ],
-                "question": "Вы чувствуете утреннюю тревогу?"
-              },
-              {
-                "answers": [
-                  {
-                    "answer": "Да",
-                    "score": 4
-                  },
-                  {
-                    "answer": "Нет",
-                    "score": 0
-                  }
-                ],
-                "question": "Вы потеряли интерес к прежним увлечениям?"
-              }
-            ],
-            "symptomps": [
-              {
-                "isActive": false,
-                "name": "Пониженное настроение"
-              },
-              {
-                "isActive": false,
-                "name": "Утренняя тревога"
-              },
-              {
-                "isActive": false,
-                "name": "Потеря интереса к увлечениям"
-              }
-            ]
-          },
-          {
-            "name": "Пневмония",
-            "questions": [
-              {
-                "answers": [
-                  {
-                    "answer": "Менее недели",
+                    "answer": "No",
                     "score": 1
                   },
                   {
-                    "answer": "Несколько недель",
+                    "answer": "Not sure",
                     "score": 3
                   },
                   {
-                    "answer": "Более месяца",
+                    "answer": "Yes",
                     "score": 5
                   }
                 ],
-                "question": "Как долго длится ваш кашель?"
+                "question": "Does the cough radiate pain to the child's chest?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас повышается температура?"
+                "question": "Is there a strong weakness?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас возникла одышка?"
+                "question": "Does the child have shortness of breath with seizures?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Кашель"
+                "name": "Cough"
               },
               {
                 "isActive": false,
-                "name": "Температура"
+                "name": "Temperature"
               },
               {
                 "isActive": false,
-                "name": "Одышка"
+                "name": "dyspnea"
               }
             ]
           },
           {
-            "name": "Анемия",
+            "name": "Anemia",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы чувствуете слабость и усталость?"
+                "question": "Does the child have pale skin?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Ваша кожа имеет бледный оттенок?"
+                "question": "Does he have bouts of fatigue?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы быстро утомляетесь?"
+                "question": "Does the child feel dizzy during physical activity?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Слабость"
+                "name": "Weakness"
               },
               {
                 "isActive": false,
-                "name": "Бледность кожи"
+                "name": "Pale skin"
               },
               {
                 "isActive": false,
-                "name": "Утомляемость"
+                "name": "Fatigue"
               }
             ]
           },
           {
-            "name": "Гастроэзофагеальная рефлюксная болезнь",
+            "name": "Gastroesophageal reflux disease",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 4
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы испытываете ожог в груди после еды?"
+                "question": "Is child experiencing chest burn after eating?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас бывает регургитация (выбрасывание пищи из желудка в пищевод)?"
+                "question": "Does your child have regurgitation (ejection of food from the stomach into the esophagus)?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы испытываете затруднение при глотании пищи?"
+                "question": "Is your child having difficulty swallowing food?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Ожог в груди"
+                "name": "Burn in the chest"
               },
               {
                 "isActive": false,
-                "name": "Регургитация"
+                "name": "Regurgitation"
               },
               {
                 "isActive": false,
-                "name": "Затруднение глотания"
+                "name": "Difficulty swallowing"
               }
             ]
           },
           {
-            "name": "Остеохондроз",
+            "name": "Gastroduodenitis",
             "questions": [
               {
                 "answers": [
                   {
-                    "answer": "Да",
-                    "score": 4
-                  },
-                  {
-                    "answer": "Нет",
-                    "score": 0
-                  }
-                ],
-                "question": "У вас бывает боль в спине?"
-              },
-              {
-                "answers": [
-                  {
-                    "answer": "Да",
-                    "score": 4
-                  },
-                  {
-                    "answer": "Нет",
-                    "score": 0
-                  }
-                ],
-                "question": "Вы ощущаете ограничение движения в спине?"
-              },
-              {
-                "answers": [
-                  {
-                    "answer": "Да",
-                    "score": 3
-                  },
-                  {
-                    "answer": "Нет",
-                    "score": 0
-                  }
-                ],
-                "question": "У вас возникает головная боль в шейной области?"
-              }
-            ],
-            "symptomps": [
-              {
-                "isActive": false,
-                "name": "Боль в спине"
-              },
-              {
-                "isActive": false,
-                "name": "Ограничение движения"
-              },
-              {
-                "isActive": false,
-                "name": "Шейная головная боль"
-              }
-            ]
-          },
-          {
-            "name": "Гастродуоденит",
-            "questions": [
-              {
-                "answers": [
-                  {
-                    "answer": "Постоянно",
+                    "answer": "Constantly",
                     "score": 5
                   },
                   {
-                    "answer": "Периодически",
+                    "answer": "Periodically",
                     "score": 3
                   },
                   {
-                    "answer": "Редко",
+                    "answer": "Rarely",
                     "score": 1
                   }
                 ],
-                "question": "Как часто у вас возникает боль в верхней части живота?"
+                "question": "How often does the child have pain in the upper abdomen?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "Вы испытываете изжогу после еды?"
+                "question": "Does child experience heartburn after eating?"
               },
               {
                 "answers": [
                   {
-                    "answer": "Да",
+                    "answer": "Yes",
                     "score": 3
                   },
                   {
-                    "answer": "Нет",
+                    "answer": "No",
                     "score": 0
                   }
                 ],
-                "question": "У вас снижен аппетит?"
+                "question": "Does child have a reduced appetite?"
               }
             ],
             "symptomps": [
               {
                 "isActive": false,
-                "name": "Боль в верхней части живота"
+                "name": "Pain in the upper abdomen"
               },
               {
                 "isActive": false,
-                "name": "Изжога"
+                "name": "Heartburn"
               },
               {
                 "isActive": false,
-                "name": "Плохой аппетит"
+                "name": "poor appetite"
               }
             ]
           }
@@ -868,3 +748,266 @@ String jsonStr = '''
 // Преобразование JSON в список
 List<Map<String, dynamic>> listOfDiagnoz =
     json.decode(jsonStr).cast<Map<String, dynamic>>();
+
+String jsonStrDoctors = '''[
+        {
+          "name": "Sayandinova Nazgul Abilievna",
+          "Experience": "18 years",
+          "price": "3000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/21513f54206a7153f5f9fc6d10d07fc0.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia"
+          ]
+        },
+        {
+          "name": "Ibragimova Dilorom Kamilzhanovna",
+          "Experience": "16 years",
+          "price": "12000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/2224e943ae4e2ebf6f826a0b30ceaaef.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia"
+          ]
+        },
+        {
+          "name": "Nurtaeva Aliya Alievna",
+          "Experience": "29 years",
+          "price": "5000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/cfef51cc6f22469cc906b590c0c7294a.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Eleugozhina Elmira Bekmukanovna",
+          "Experience": " 23 years",
+          "price": "7000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/bfdf2125f61c323eaafb15bd700d1658.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Robbek Ivan Gavrilyevich",
+          "Experience": " 7 years",
+          "price": "8000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/8006aeb8965a067fafc71086f0ccb016.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Kurakbayeva Aziza Sultanovna",
+          "Experience": "10 years",
+          "price": "5000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/8006aeb8965a067fafc71086f0ccb016.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma"
+          ]
+        },
+        {
+          "name": "Gurevich Dmitry Vladimirovich",
+          "Experience": "28 years",
+          "price": "20000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/c6a62cfc34139ae7531ba99936131a23.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma",
+            "Diabetes",
+            "Acute gastritis",
+            "Migraine",
+            "Depression",
+            "Anemia",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Asylbekova Zhannat Zeinollaevna",
+          "Experience": "41 years",
+          "price": "10000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/ccccf4a51ecaeb11d3ca291a7eb71d57.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma",
+            "Diabetes",
+            "Acute gastritis",
+            "Migraine",
+            "Depression",
+            "Anemia",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Grigorieva Anastasia Nikolaevna",
+          "Experience": "14 years",
+          "price": "12000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/f4628ade00ee741272355c0a02942566.jpg",
+          "Diagnozes":[
+            "Bronchitis",
+            "Flu",
+            "Angina",
+            "Pneumonia",
+            "Asthma",
+            "Diabetes",
+            "Acute gastritis",
+            "Migraine",
+            "Depression",
+            "Anemia",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Khan Natalya Viktorovna",
+          "Experience": "8 years",
+          "price": "8000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/0235a3d664c16b25d7518344b43442d2.jpg",
+          "Diagnozes":[
+            "Diabetes",
+            "Acute gastritis",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Suleimenova Dinara Sagandykovna",
+          "Experience": "28 years",
+          "price": "18000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/f063f98991e24748d54b1e23e87bfc22.jpg",
+          "Diagnozes":[
+            "Diabetes",
+            "Acute gastritis",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Eslamgalieva Sholpan Nurlanovna",
+          "Experience": "18 years",
+          "price": "8000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/6cab7e0fa9654fad0f9cd63c7683fe30.jpg",
+          "Diagnozes":[
+            "Diabetes",
+            "Acute gastritis",
+            "Gastroesophageal reflux disease",
+            "Gastroduodenitis"
+          ]
+        },
+        {
+          "name": "Stroikov Petr Ivanovich",
+          "Experience": "39 years",
+          "price": "3500",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/a03548cf20b92910ca668fa99b9715ff.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Terenova Akzada Yesenamanovna",
+          "Experience": "29 years",
+          "price": "5000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/86ada3aa634bf7dd2eba9c8a1358bfd3.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Maltseva Inna Vladimirovna",
+          "Experience": "29 years",
+          "price": "10000",
+          "rating": "5",
+          "imgURL": "https://docok.kz/files/doctor/big/8405f889f87fa0b5826b6bfb5ddb97e6.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Shcherbinina Olga Mikhailovna",
+          "Experience": "21 years",
+          "price": "7000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/4df678d1789201374f4aa87066e9d92a.jpg",
+          "Diagnozes":[
+            "Migraine",
+            "Anemia"
+          ]
+        },
+        {
+          "name": "Dolzhenko Galina Petrovna",
+          "Experience": "32 years",
+          "price": "12000",
+          "rating": "4",
+          "imgURL": "https://docok.kz/files/doctor/big/c1d2b72ebc81145bd8afaddb83dbea1b.jpg",
+          "Diagnozes":[
+            "Depression"
+          ]
+        },
+        {
+          "name": "Zeynetullaeva-Verbovaya Elmira Hamidullaevna",
+          "Experience": "14 years",
+          "price": "23000",
+          "rating": "3",
+          "imgURL": "https://docok.kz/files/doctor/big/ec85ad641dc6c38589151f9066eabc08.jpg",
+          "Diagnozes":[
+            "Depression"
+          ]
+        },
+      {
+          "name": "Petrova Zhanna Maratovna",
+          "Experience": "7 years",
+          "price": "30000",
+          "rating": "3",
+          "imgURL": "https://docok.kz/files/doctor/big/c5132faf6c164dd7b38baa1317e4efb1.jpg",
+          "Diagnozes":[
+            "Depression"
+          ]
+        }
+      ]''';
+List<Map<String, dynamic>> listOfDoctors =
+    json.decode(jsonStrDoctors).cast<Map<String, dynamic>>();
