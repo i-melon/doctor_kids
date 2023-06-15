@@ -38,7 +38,40 @@ class Header extends StatelessWidget {
           ),
           StartButton(
             name: 'MENU',
-            action: () {},
+            action: () {
+              return showDialog<void>(
+                context: context,
+                builder: (context) {
+                  return Container(
+                    padding: EdgeInsets.all(50),
+                    child: Center(
+                      child: AlertDialog(
+                        title: Text('ATTENTION'),
+                        content: Container(
+                          height: 100,
+                          child: Center(
+                              child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('This function will availeble'),
+                              Text('for moderators')
+                            ],
+                          )),
+                        ),
+                        actions: [
+                          StartButton(
+                              name: 'OK',
+                              action: () {
+                                Navigator.of(context).pop();
+                              })
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
           )
         ],
       ),

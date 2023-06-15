@@ -205,7 +205,42 @@ class FinishPage extends StatelessWidget {
                                 child: Container(
                               child: StartButton(
                                 name: 'Connect',
-                                action: () {},
+                                action: () {
+                                  return showDialog<void>(
+                                    context: context,
+                                    builder: (context) {
+                                      return Container(
+                                        padding: EdgeInsets.all(50),
+                                        child: Center(
+                                          child: AlertDialog(
+                                            title: Text('=('),
+                                            content: Container(
+                                              height: 70,
+                                              child: Center(
+                                                  child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                      'This feature is under development'),
+                                                ],
+                                              )),
+                                            ),
+                                            actions: [
+                                              StartButton(
+                                                  name: 'OK',
+                                                  action: () {
+                                                    Navigator.of(context).pop();
+                                                  })
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
                               ),
                             ))
                           ],
@@ -219,55 +254,4 @@ class FinishPage extends StatelessWidget {
       ),
     );
   }
-}
-
-class _DiagramPainter extends CustomPainter {
-  _DiagramPainter({
-    required this.dotRadius,
-    required this.startBarRadius,
-    required this.layers,
-    required this.layersSpacing,
-    required this.dotsSpacing,
-    required this.progress,
-    required Color dotColor,
-    required Color progressDotColor,
-  })  : _paint = Paint()
-          ..color = dotColor
-          ..style = PaintingStyle.fill,
-        _progressPaint = Paint()
-          ..color = progressDotColor
-          ..style = PaintingStyle.fill,
-        _dotDiameter = dotRadius * 2,
-        _dotsSizeWithSpacing = dotRadius * 2 + dotsSpacing;
-
-  final double dotRadius;
-  final double startBarRadius;
-  final int layers;
-  final double layersSpacing;
-  final double dotsSpacing;
-  final double progress;
-
-  final Paint _paint;
-  final Paint _progressPaint;
-
-  final double _dotDiameter;
-  final double _dotsSizeWithSpacing;
-
-  static const _startAngle = 270.0;
-  static const _circle = 360.0;
-  static const _halfCircle = 180.0;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    // implement this later
-  }
-
-  @override
-  bool shouldRepaint(covariant _DiagramPainter oldDelegate) =>
-      dotRadius != oldDelegate.dotRadius ||
-      startBarRadius != oldDelegate.startBarRadius ||
-      layers != oldDelegate.layers ||
-      layersSpacing != oldDelegate.layersSpacing ||
-      dotsSpacing != oldDelegate.dotsSpacing ||
-      progress != oldDelegate.progress;
 }
